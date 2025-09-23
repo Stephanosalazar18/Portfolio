@@ -1,0 +1,182 @@
+.navbar-container {
+  background: black;
+  padding-bottom: 32rem;
+  transform-origin: top center;
+  will-change: transform;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backface-visibility: hidden;
+}
+
+nav {
+  font-family: 'FragmentMono', monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  
+  /* Padding lateral controlado por variable global */
+  padding-inline: var(--container-px, 1rem);
+  /* Reservar espacio inferior para el bloque nav-p anclado abajo */
+  padding-block: 1rem 3rem; /* top / bottom */
+
+
+  color: var(--light);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  mix-blend-mode: difference;
+}
+
+
+a {
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nav-p {
+  font-family: 'FragmentMono', monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.01rem;
+  overflow: hidden; /* necesario para efecto de "corte" como letras */
+  position: static; /* deja que fluya dentro de .nav-bott */
+  width: auto;
+}
+
+.nav-h1 {
+  font-family: 'FragmentMono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.01rem;
+  overflow: hidden; /* necesario para efecto de "corte" como letras */
+  position: static; /* deja que fluya dentro de .nav-bott */
+  width: auto;
+
+}
+
+/* contenedor del ícono para animar como bloque dentro de la máscara */
+.nav-svg {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transform;
+  transform: translateY(0%);
+  height: 24px;
+}
+
+.nav-svg svg {
+  width: 24px;
+  height: 18px;
+}
+
+.nav-bott {
+  position: absolute; /* anclado al fondo del navbar */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column; /* hijos uno debajo del otro */
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem 1rem; /* un poco de respiro inferior */
+}
+
+.menu-links-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* gap fluido: grande en desktop, se reduce de forma progresiva */
+  gap: var(--nav-gap, clamp(20rem, 8vw, 13rem));
+  will-change: transform;
+}
+
+.menu-link {
+  position: relative;
+  will-change: transform;
+  overflow: hidden
+}
+
+.menu-link a {
+  position: relative;
+  color: var(--light);
+  letter-spacing: -0.01rem;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.menu-link a span:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.link-highlighter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background: var(--light);
+  will-change: transform, auto;
+}
+
+.char {
+  position: relative;
+  display: inline-block;
+  will-change: transform;
+}
+
+@media (max-width: 600px) {
+  .svg-container {
+    height: auto; /* Elimina la altura completa */
+    padding-top: 1rem;
+    
+  }
+  .svg-container svg {
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente */
+    padding-top: 2rem;
+    padding-inline: var(--container-px, 1rem); /* mantiene paddings laterales */
+  }
+
+  .link-highlighter{
+    display: none;
+  }
+
+  .menu-links-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem; /* compacto en móvil */
+  }
+  .menu-link a {
+    font-size: 1.5rem; /* Asegura el tamaño grande en los links */
+    font-family: "PP Neue Montreal", sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02rem;
+
+  }
+
+
+}

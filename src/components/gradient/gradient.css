@@ -1,0 +1,127 @@
+
+.gradient-bg {
+  /* contenedor sin filter para que no aplane el blending */
+  height: 100%;
+  width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	isolation: isolate; /* el texto mezcla contra este fondo */
+	/* offsets del mouse por defecto */
+	--mouse-x-offset: 0%;
+	--mouse-y-offset: 0%;
+  will-change: transform;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.gradient-bg::before {
+  content: "";
+	position: relative;
+  
+  inset: 0;
+  z-index: 0;
+  filter: contrast(230%) brightness(100%);
+	/* animación por defecto del hotspot */
+	animation: wander-x 12s ease-in-out infinite alternate,
+						 wander-y 16s ease-in-out infinite alternate;
+  background: 
+	linear-gradient(147deg, rgba(0,0,0,0.62), rgba(255,255,255,0.14)),
+	radial-gradient(circle at calc(var(--auto-x) + var(--mouse-x-offset)) calc(var(--auto-y) + var(--mouse-y-offset)), rgba(255, 255, 255, 0.903), rgba(255,255,255,0.03)),
+	radial-gradient(circle at 25% 60%, rgba(0,0,0,0.7), rgba(226,223,223,0.03)),
+	radial-gradient(circle at 63% 33%, rgba(0,0,0,0.51), rgba(0,255,255,0)),
+	radial-gradient(circle at 68% -17%, rgba(255,255,255,0.26), rgba(0,0,0,0.58)),
+	url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+/* CSS Properties tipadas para animación y offsets */
+@property --auto-x {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 50%;
+}
+
+@property --auto-y {
+	syntax: '<percentage>';
+	inherits: false;
+	initial-value: 50%;
+}
+
+@property --mouse-x-offset {
+	syntax: '<percentage>';
+	inherits: true; /* heredado al ::before */
+	initial-value: 0%;
+}
+
+@property --mouse-y-offset {
+	syntax: '<percentage>';
+	inherits: true; /* heredado al ::before */
+	initial-value: 0%;
+}
+
+/* Recorridos autónomos para el hotspot */
+@keyframes wander-x {
+	0%   { --auto-x: 20%; }
+	25%  { --auto-x: 75%; }
+	50%  { --auto-x: 35%; }
+	75%  { --auto-x: 85%; }
+	100% { --auto-x: 30%; }
+}
+
+
+/* Valores por defecto a nivel global */
+:root {
+	--mouse-x-offset: 0%;
+	--mouse-y-offset: 0%;
+}
+@keyframes wander-y {
+	0%   { --auto-y: 30%; }
+	20%  { --auto-y: 80%; }
+	45%  { --auto-y: 40%; }
+	70%  { --auto-y: 65%; }
+	100% { --auto-y: 25%; }
+}
+
+.gradient-bg-p {
+  mix-blend-mode: difference;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	z-index: 1; /* encima del fondo para mezclar */
+  color: #fff; /* maximiza el efecto difference */
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: 700;
+	will-change: transform; /* parallax más suave */
+
+}
+
+.site-gradient-bg {
+	position: absolute;
+	inset: 0;
+	z-index: -1; /* detrás de todo el contenido */
+	width: 100vw;
+	height: 160vh;
+	top: -3rem;
+	pointer-events: none; /* no intercepta interacciones */
+  display: grid;
+  place-items: center; /* centra hijos horizontal y verticalmente */
+}
+
+.site-gradient-bg::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background-color: rgb(203, 25, 25);
+	/* filter: contrast(230%) brightness(100%);
+	animation: wander-x 12s ease-in-out infinite alternate,
+					 wander-y 16s ease-in-out infinite alternate;
+	background:
+		linear-gradient(147deg, rgba(0,0,0,0.62), rgba(255,255,255,0.14)),
+		radial-gradient(circle at calc(var(--auto-x) + var(--mouse-x-offset)) calc(var(--auto-y) + var(--mouse-y-offset)), rgba(255,255,255,0.7), rgba(255,255,255,0.03)),
+		radial-gradient(circle at 25% 60%, rgba(0,0,0,0.7), rgba(226,223,223,0.03)),
+		radial-gradient(circle at 63% 33%, rgba(0,0,0,0.51), rgba(0,255,255,0)),
+		radial-gradient(circle at 68% -17%, rgba(255,255,255,0.26), rgba(0,0,0,0.58)),
+		url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+ */
+}
