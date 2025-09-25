@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import "./gradient.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import PresentationCard from "../presentationCard/Presentation";
+
 
 export default function GlobalGradientBG() {
   const textRef = useRef(null);
@@ -23,40 +25,40 @@ export default function GlobalGradientBG() {
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
-  useEffect(() => {
-    // Parallax con GSAP + ScrollTrigger limitado del top hasta la mitad del viewport
-    gsap.registerPlugin(ScrollTrigger);
-    const el = textRef.current;
-    if (!el) return;
+  // useEffect(() => {
+  //   // Parallax con GSAP + ScrollTrigger limitado del top hasta la mitad del viewport
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   const el = textRef.current;
+  //   if (!el) return;
 
-    // Desplazamiento inicial hacia arriba (px) para que empiece “debajo” del navbar
-    const getStartOffset = () => -Math.min(window.innerHeight * 0.25, 140);
-    // La animación termina al alcanzar la mitad del viewport desde el top
-    const getEndDistance = () => Math.round(window.innerHeight / 3);
+  //   // Desplazamiento inicial hacia arriba (px) para que empiece “debajo” del navbar
+  //   const getStartOffset = () => -Math.min(window.innerHeight * 0.25, 140);
+  //   // La animación termina al alcanzar la mitad del viewport desde el top
+  //   const getEndDistance = () => Math.round(window.innerHeight / 3);
 
-    // Fijar posición inicial
-    gsap.set(el, { y: getStartOffset() });
+  //   // Fijar posición inicial
+  //   gsap.set(el, { y: getStartOffset() });
 
-    const tween = gsap.to(el, {
-      y: 0, // llega al centro (el contenedor ya centra; y:0 lo alinea al centro)
-      ease: "back.inOut(0.3)",
-      scrollTrigger: {
-        // Usamos posiciones absolutas de scroll: del 0 hasta la mitad del viewport
-        start: 0,
-        end: () => "+=" + getEndDistance(),
-        scrub: 1,
-      },
-    });
+  //   const tween = gsap.to(el, {
+  //     y: 0, // llega al centro (el contenedor ya centra; y:0 lo alinea al centro)
+  //     ease: "back.inOut(0.3)",
+  //     scrollTrigger: {
+  //       // Usamos posiciones absolutas de scroll: del 0 hasta la mitad del viewport
+  //       start: 0,
+  //       end: () => "+=" + getEndDistance(),
+  //       scrub: 1,
+  //     },
+  //   });
 
-    return () => {
-      tween.scrollTrigger && tween.scrollTrigger.kill();
-      tween.kill();
-    };
-  }, []);
+  //   return () => {
+  //     tween.scrollTrigger && tween.scrollTrigger.kill();
+  //     tween.kill();
+  //   };
+  // }, []);
 
   return (
-    <div className="site-gradient-bg" aria-hidden>
-      <p ref={textRef} className="gradient-bg-p">HEY</p>
+    <div className="" aria-hidden>
+      {/* <p ref={textRef} className="gradient-bg-p"></p> */}
     </div>
   );
 }

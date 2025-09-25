@@ -1,0 +1,17 @@
+.bat {
+  box-shadow: 30px 20px 0 0 #3c3c3c, 40px 20px 0 0 #3c3c3c, 50px 20px 0 0 #3c3c3c, /* Cabeza */
+    20px 30px 0 0 #3c3c3c, 30px 30px 0 0 #eceff1, 40px 30px 0 0 #eceff1, 50px 30px 0 0 #eceff1, 60px 30px 0 0 #3c3c3c, /* Parte superior pantalla/orejas */
+    20px 40px 0 0 #3c3c3c, 30px 40px 0 0 #eceff1, 40px 40px 0 0 #263238, 50px 40px 0 0 #eceff1, 60px 40px 0 0 #3c3c3c, /* Pantalla/cuerpo */
+    20px 50px 0 0 #3c3c3c, 30px 50px 0 0 #eceff1, 40px 50px 0 0 #263238, 50px 50px 0 0 #eceff1, 60px 50px 0 0 #3c3c3c, /* Pantalla/cuerpo */
+    20px 60px 0 0 #3c3c3c, 30px 60px 0 0 #eceff1, 40px 60px 0 0 #263238, 50px 60px 0 0 #eceff1, 60px 60px 0 0 #3c3c3c, /* Pantalla/cuerpo */
+    20px 70px 0 0 #3c3c3c, 30px 70px 0 0 #eceff1, 40px 70px 0 0 #263238, 50px 70px 0 0 #eceff1, 60px 70px 0 0 #3c3c3c, /* Pantalla/cuerpo */
+    10px 80px 0 0 #3c3c3c, 20px 80px 0 0 #3c3c3c, 30px 80px 0 0 #eceff1, 40px 80px 0 0 #263238, 50px 80px 0 0 #eceff1, 60px 80px 0 0 #3c3c3c, 70px 80px 0 0 #3c3c3c, /* Base pantalla/hombros */
+    10px 90px 0 0 #3c3c3c, 20px 90px 0 0 #3c3c3c, 30px 90px 0 0 #263238, 40px 90px 0 0 #263238, 50px 90px 0 0 #263238, 60px 90px 0 0 #3c3c3c, 70px 90px 0 0 #3c3c3c, /* Brazos/escritorio */
+    10px 100px 0 0 #3c3c3c, 20px 100px 0 0 #263238, 30px 100px 0 0 #263238, 40px 100px 0 0 #263238, 50px 100px 0 0 #263238, 60px 100px 0 0 #263238, 70px 100px 0 0 #3c3c3c, /* Manos/teclado */
+    20px 110px 0 0 #263238, 30px 110px 0 0 #263238, 40px 110px 0 0 #263238, 50px 110px 0 0 #263238, 60px 110px 0 0 #263238, /* Teclado */
+    30px 120px 0 0 #263238, 40px 120px 0 0 #263238, 50px 120px 0 0 #263238, /* Silla */
+    30px 130px 0 0 #263238, 40px 130px 0 0 #263238, 50px 130px 0 0 #263238, /* Silla */
+    40px 140px 0 0 #263238; /* Base silla */
+  height: 10px;
+  width: 10px;
+}

@@ -4,6 +4,7 @@
   margin-top: -32.5vh;
 } */
 
+
 .displace-container img {
   width: 100%;
   height: 100%;
@@ -70,16 +71,15 @@
 } */
 
 .card-all {
-  background-color: #222222;
+  background-color: #22222200;
   /* Tab a la izquierda (estilo carpeta) */
   position: relative;
   display: flex;
   justify-content: center;  
   bottom: -5vh;
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
   clip-path: polygon(84% 95%, 100% 95%, 100% 100%, 82% 100%);
-  
 }
 
 #card-1 {
@@ -92,7 +92,7 @@
   margin-bottom: 0;
   height: 100vh;
   width: 100vw;
-  clip-path: polygon(15% 0, 17% 5%, 100% 5%, 100% 100%, 0 100%, 0 0);
+clip-path: polygon(0 0, 15% 0, 17% 5%, 83% 5%, 85% 0, 100% 0, 100% 100%, 0 100%);
 
 }
 
