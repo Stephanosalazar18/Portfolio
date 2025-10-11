@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.navbar-container-wrapper {
+  height: 100vh;
+}
+
 .navbar-container {
   background: black;
-  padding-bottom: 32rem;
   transform-origin: top center;
   will-change: transform;
   position: sticky;
   top: 0;
   z-index: 50;
+  padding-bottom: 32rem;
   backface-visibility: hidden;
 }
 
-nav {
-  font-family: 'FragmentMono', monospace;
+.navbar-container nav {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
   font-size: 14px;
   text-transform: uppercase;
   position: relative;
@@ -31,15 +39,16 @@ nav {
   mix-blend-mode: difference;
 }
 
-
-a {
+.menu-links-wrapper a {
   text-decoration: none;
   line-height: 1;
   cursor: pointer;
 }
 
 .nav-p {
-  font-family: 'FragmentMono', monospace;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
   font-size: 14px;
   text-transform: uppercase;
   display: flex;
@@ -52,7 +61,9 @@ a {
 }
 
 .nav-h1 {
-  font-family: 'FragmentMono', monospace;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
   font-size: 12px;
   text-transform: uppercase;
   display: flex;
@@ -79,6 +90,26 @@ a {
 .nav-svg svg {
   width: 24px;
   height: 18px;
+}
+
+.nav-mid {
+  position: absolute; /* superponer sin afectar el flujo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* no bloquear interacción con los links debajo */
+  z-index: 1;
+}
+
+.nav-mid img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(80%) contrast(100%);
+ 
 }
 
 .nav-bott {
@@ -128,7 +159,7 @@ a {
   bottom: 0;
   left: 0;
   width: 2rem;
-  height: 2px;
+  height: 1px;
   background: var(--light);
   will-change: transform, auto;
 }
@@ -140,6 +171,10 @@ a {
 }
 
 @media (max-width: 600px) {
+  /* Hacer más largo el contenedor negro como antes (altura mínima de pantalla) */
+  .navbar-container {
+    min-height: 80vh;
+  }
   .svg-container {
     height: auto; /* Elimina la altura completa */
     padding-top: 1rem;
@@ -151,29 +186,37 @@ a {
     align-items: center;
     
   }
+  .nav-mid {
+    display: none;
+  }
 
-  nav {
+  /* Centrar el nav dentro del contenedor negro sin afectar su tamaño */
+  .navbar-container nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centra verticalmente */
-    padding-top: 2rem;
-    padding-inline: var(--container-px, 1rem); /* mantiene paddings laterales */
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 5rem; /* espacio reservado para el bloque nav-p anclado abajo */
+    padding-block: 0; /* el nav es absoluto; no alteramos la altura del contenedor */
+    padding-inline: var(--container-px, 1rem);
   }
 
-  .link-highlighter{
+  .link-highlighter {
     display: none;
   }
 
   .menu-links-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem; /* compacto en móvil */
+    gap: 0.5rem; /* compacto en móvil */
   }
   .menu-link a {
-    font-size: 1.5rem; /* Asegura el tamaño grande en los links */
-    font-family: "PP Neue Montreal", sans-serif;
-    font-weight: 500;
+    font-size: 24px; 
     letter-spacing: -0.02rem;
 
   }

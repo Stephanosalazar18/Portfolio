@@ -1,11 +1,9 @@
 import React from 'react'
-import PresentationCard from './Presentation'
+import PresentationCard from './Presentation.jsx'
 
 const SectionPresentation = () => {
   return (
-    <div>
       <PresentationCard />
-    </div>
   )
 }
 

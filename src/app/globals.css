@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fragment+Mono:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 
 @font-face {
@@ -55,15 +55,24 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Melodrama';
+  src: url('/fonts/melodrame.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --dark: #1e1e1e;
+  --dark: #1a1a1a;
   --light: #fefff8;
-  --accent: #fca331;
+  --accent: #5D30FF;
+
   /* espaciamiento global de contenedor */
   --container-px: clamp(1rem, 4vw, 3rem);
   /* gap por defecto del navbar */
@@ -87,8 +96,20 @@
 body {
   padding: 0;
   margin: 0;
-  background: var(--foreground);
+  background: var(--dark);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden; /* evita scroll horizontal por 100vw, etc. */
+}
+
+.background-image {
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(20px) brightness(0.7) url(#grain);
+  top: 50%;
+  left: 50%;
+  
+  transform: translate(-50%) scale(1.25); 
+
 }
