@@ -8,7 +8,7 @@ export const metadata = {
     "Stephano Salazar",
     "Frontend Developer",
     "Backend Developer",
-    "Web Developer",
+    "Web developer",
   ],
   author: [{ name: "Stephano Salazar", url: "https://github.com/Stephanosalazar18" }],
   // openGraph: {
@@ -41,25 +41,6 @@ export default function RootLayout({ children }) {
       <body
         className={` antialiased`}
       >
-        <svg style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden' }}>
-          <filter id="grain">
-            {/* Genera un ruido tipo fractal */}
-            <feTurbulence 
-              type="fractalNoise" 
-              baseFrequency="0.65" 
-              numOctaves="3" 
-              result="noise" 
-            />
-            {/* Desatura el ruido (lo hace blanco y negro) */}
-            <feColorMatrix type="saturate" values="0" />
-            {/* Ajusta la opacidad del ruido */}
-            <feComponentTransfer>
-              <feFuncA type="linear" slope="0.5"/>
-            </feComponentTransfer>
-            {/* Mezcla la imagen original con el ruido generado */}
-            <feBlend mode="multiply" in="SourceGraphic" in2="noise" />
-          </filter>
-        </svg>
         <img className="background-image" src="/background-texture3.jpg" alt="background" />
         {children}
       </body>

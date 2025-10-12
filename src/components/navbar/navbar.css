@@ -173,8 +173,8 @@
 @media (max-width: 600px) {
   /* Hacer más largo el contenedor negro como antes (altura mínima de pantalla) */
   .navbar-container {
-    min-height: 80vh;
-    background: rgb(0, 0, 0);
+    min-height: 70vh;
+    background: rgba(0, 0, 0, 0);
     
   }
   .svg-container {
