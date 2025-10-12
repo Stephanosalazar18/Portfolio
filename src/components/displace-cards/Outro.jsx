@@ -140,25 +140,6 @@ const Outro = () => {
               <span className="footer-title" ref={charRef7}>\SEE YOU LATER! `•´</span>
             </div>
             <div className="bottom-footer">
-              <div className="menu-footer-links" ref={socialLinksWrapperRef}>
-                <span className="footer-title">\RESUME</span>
-                {otherItems.map((item, index) => (
-                  <div
-                    key={item.label}
-                    className="footer-link"
-                    ref={(el) => (socialLinkContainersRef.current[index] = el)}
-                  >
-                    <a
-                      target="_blank"
-                      href={item.route}
-                      ref={(el) => (socialLinksRef.current[index] = el)}
-                    >
-                      <span>{item.label}</span>
-                      <span>{item.label}</span>
-                    </a>
-                  </div>
-                ))}
-              </div>
               <div className="menu-footer-links" >
                 <span className="footer-title">\NAVIGATE TO</span>
                 {menuItems.map((item, index) => (
@@ -181,6 +162,25 @@ const Outro = () => {
               <div className="menu-footer-links" ref={socialLinksWrapperRef}>
                 <span className="footer-title">{'\\ME :)'}</span>
                 {socialItems.map((item, index) => (
+                  <div
+                    key={item.label}
+                    className="footer-link"
+                    ref={(el) => (socialLinkContainersRef.current[index] = el)}
+                  >
+                    <a
+                      target="_blank"
+                      href={item.route}
+                      ref={(el) => (socialLinksRef.current[index] = el)}
+                    >
+                      <span>{item.label}</span>
+                      <span>{item.label}</span>
+                    </a>
+                  </div>
+                ))}
+              </div>
+              <div className="menu-footer-links" ref={socialLinksWrapperRef}>
+                <span className="footer-title">\RESUME</span>
+                {otherItems.map((item, index) => (
                   <div
                     key={item.label}
                     className="footer-link"

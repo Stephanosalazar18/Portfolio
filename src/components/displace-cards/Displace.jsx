@@ -29,17 +29,17 @@ const MediaElement = ({ src, alt }) => {
   );
 };
 
-const Card = ({ title, view, copy, year, category, logo, tags, images, index, link }) => {
+const Card = ({ title, view, copy, year, category, logo, tags, images, index, link, link_2 }) => {
   return (
     <div className="card" id={`card-${index + 1}`}>
       <div className="card-inner">
         <div className="card-title-featured">
           <span>FEATURED 0{index + 1}</span>
-          <button><a target="_blank" href={link}><span>{view}</span></a></button>
+          <button><a target="_blank" href={link_2}><span>{view}</span></a></button>
         </div>
         <header className="card-header">
           <div className="card-title-block">
-            <a className="card-title" href="#">
+            <a className="card-title" target="_blank" href={link}>
               <h1 >{title}</h1>
             </a>
           </div>
@@ -96,7 +96,8 @@ const cards = [
   {
     title: "Trello App",
     view: "ALL PROJECTS >",
-    link: "https://github.com/Stephanosalazar18",
+    link_2: "https://github.com/Stephanosalazar18",
+    link: "https://github.com/Stephanosalazar18/Trello-app",
     year: "2025",
     category: "Development",
     tecnologies: [
@@ -152,6 +153,7 @@ const cards = [
   },
   {
     title: "Apple Website",
+    link: "https://github.com/Stephanosalazar18/Apple-website",
     year: "2025",
     category: "Development",
     tecnologies: [
@@ -191,6 +193,7 @@ const cards = [
   },
   {
     title: "Personal portfolio with Next.js and GSAP",
+    link: "https://github.com/Stephanosalazar18/Portfolio",
     year: "2025",
     category: "Web Development",
     tecnologies: [

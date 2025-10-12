@@ -267,11 +267,10 @@ padding: 13px;
   /* En móvil también dejamos crecer y alineamos arriba */
   .card-presentation {
     height: auto;
-    min-height: 40vh;
+    min-height: 100vh;
     justify-items: center;
     padding: 16px;
     padding-right: 32px;
-    transform: translateY(15vh);
     
   }
 
@@ -355,7 +354,7 @@ padding: 13px;
 
 @media (max-width: 450px) {
   .card-presentation {
-    max-height: 70vh;
+    max-height: 100vh;
     justify-items: center;
     padding: 16px;
     transform: translateY(-15vh);

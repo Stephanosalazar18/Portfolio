@@ -147,7 +147,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto
   }
-  .menu-footer-links:nth-child(2) { display: none }
+  .menu-footer-links:nth-child(1) { display: none }
   
   .menu-footer-links {
     font-size: 18px
