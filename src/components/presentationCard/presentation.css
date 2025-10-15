@@ -176,6 +176,7 @@ padding: 13px;
   justify-content: start;
   padding: 13px; 
   position: relative;
+  flex-direction: column;
 
   font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
@@ -186,6 +187,10 @@ padding: 13px;
   text-transform: uppercase;
 
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='0.5' stroke-dasharray='1%2c3'/%3e%3c/svg%3e");
+}
+
+.text-frame-3 p {
+  margin-bottom: 8px;
 }
 
 .bottom-frame-3 {

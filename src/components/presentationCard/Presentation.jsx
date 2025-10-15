@@ -128,11 +128,9 @@ export const PresentationCard = () => {
             <h2>Full Stack Developer</h2>
           </div>
           <div className="text-frame-3">
-            <p>I am Gabriel Salazar, a developer who creates at the intersection of design and logic.
-              <br />
-              My job is to bridge the gap between creative vision and technical execution. I specialize in full-stack development, fluently handling both the art of a well-designed user experience and the science of a solid, high-performance infrastructure.
-              <br />
-              I am driven by the creation of clean code and the architecture of systems that not only work, but endure. I am always ready to collaborate on projects that require meticulous attention to detail and a strong desire to innovate.</p>
+            <p>I am Gabriel Salazar, a developer who creates at the intersection of design and logic.</p>
+            <p>My job is to bridge the gap between creative vision and technical execution. I specialize in full-stack development, fluently handling both the art of a well-designed user experience and the science of a solid, high-performance infrastructure.</p>
+            <p>I am driven by the creation of clean code and the architecture of systems that not only work, but endure. I am always ready to collaborate on projects that require meticulous attention to detail and a strong desire to innovate.</p>
           </div>
           <div className="bottom-frame-3">
             <span>CURRENTLY BASED IN</span>
