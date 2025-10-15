@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Stephano Salazar | Portfolio
 
-## Getting Started
+![Portfolio Preview](./public/assets/featured-1.jpg)
 
-First, run the development server:
+---
+
+## ✨ Descripción
+
+Portfolio interactivo de **Stephano Salazar**. Presenta proyectos destacados, animaciones web, desarrollo frontend y backend con tecnologías modernas como Next.js, React, GSAP y TailwindCSS.
+
+---
+
+## 🛠️ Tecnologías principales
+
+![Next.js](https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+
+---
+
+## 📸 Preview
+
+![Demo](./public/assets/featured-1-1.jpg)
+
+---
+
+## ⚡ Instalación rápida
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧩 Estructura del proyecto
 
-## Learn More
+```
+src/
+  app/
+  components/
+  public/
+  ...
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Despliegue
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El proyecto está optimizado para Vercel. Puedes desplegarlo fácilmente usando:
 
-## Deploy on Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📚 Recursos
+
+- [Next.js Docs](https://nextjs.org/docs)
+- [React Docs](https://react.dev/)
+- [GSAP Docs](https://greensock.com/docs/)
+- [TailwindCSS Docs](https://tailwindcss.com/docs)
+
+---
+
+## 👤 Autor
+
+**Stephano Salazar**  
+[GitHub](https://github.com/Stephanosalazar18)
+
+---
+
+## 📬 Contacto
+
+¿Te gustaría colaborar o tienes alguna duda? Escríbeme por [LinkedIn](https://www.linkedin.com/in/stephano-salazar/) o abre un issue.
