@@ -1,12 +1,9 @@
 # 🚀 Stephano Salazar | Portfolio
-
-![Portfolio Preview](./public/assets/featured-1.jpg)
-
 ---
 
 ## ✨ Descripción
 
-Portfolio interactivo de **Stephano Salazar**. Presenta proyectos destacados, animaciones web, desarrollo frontend y backend con tecnologías modernas como Next.js, React, GSAP y TailwindCSS.
+Portfolio interactivo. Presenta proyectos destacados, animaciones web, desarrollo frontend y backend con tecnologías modernas como Next.js, React, GSAP y TailwindCSS.
 
 ---
 
@@ -21,7 +18,6 @@ Portfolio interactivo de **Stephano Salazar**. Presenta proyectos destacados, an
 
 ## 📸 Preview
 
-![Demo](./public/assets/featured-1-1.jpg)
 
 ---
 
@@ -74,4 +70,4 @@ El proyecto está optimizado para Vercel. Puedes desplegarlo fácilmente usando:
 
 ## 📬 Contacto
 
-¿Te gustaría colaborar o tienes alguna duda? Escríbeme por [LinkedIn](https://www.linkedin.com/in/stephano-salazar/) o abre un issue.
+¿Te gustaría colaborar o tienes alguna duda? Escríbeme por [LinkedIn](https://www.linkedin.com/in/gabriel-salazar-792727262/) o abre un issue.
