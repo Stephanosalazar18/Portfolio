@@ -16,11 +16,6 @@ Portfolio interactivo. Presenta proyectos destacados, animaciones web, desarroll
 
 ---
 
-## 📸 Preview
-
-
----
-
 ## ⚡ Instalación rápida
 
 ```bash
@@ -30,28 +25,8 @@ pnpm dev
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
----
-
-## 🧩 Estructura del proyecto
-
 ```
-src/
-  app/
-  components/
-  public/
-  ...
 ```
-
----
-
-## 🌐 Despliegue
-
-El proyecto está optimizado para Vercel. Puedes desplegarlo fácilmente usando:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
----
-
 ## 📚 Recursos
 
 - [Next.js Docs](https://nextjs.org/docs)
