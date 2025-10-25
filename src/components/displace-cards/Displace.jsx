@@ -255,7 +255,6 @@ export default function DisplaceCard() {
             end: "top bottom",
             pin: true,
             pinSpacing: false,
-            scrub: 3,
           }
         })
       }
@@ -270,7 +269,7 @@ export default function DisplaceCard() {
   // Solo Lenis sobre el contenido desplazable
   return (
     <>
-      {/* <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} /> */}
+      <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
       <div className="displace-container" ref={container} id="Projects">
         <section className="cards">
           {cards.map((card, index) => (
