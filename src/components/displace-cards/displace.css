@@ -2,7 +2,6 @@
 
 
 .displace-container {
-  margin-top: -16rem;
   background-color: #1a1a1a00;
   color: rgb(255, 255, 255);
 
@@ -27,24 +26,7 @@
   font-weight: 500;
 }
 
-
-/* Contenedor de cards: centrado y apilado */
-/* .cards {
-  position: relative;
-  display: grid;
-  place-items: center; /* centra cada card horizontal y verticalmente en su propio flujo */
-
-
-
-
-/* Orden de apilado superior -> inferior */
-/* #card-1 { z-index: 1; }
-#card-2 { z-index: 2; }
-#card-3 { z-index: 3; } */
-/* .card  { z-index: 20; } */
-
-
-.card-inner {
+.card {
   position: relative;
   will-change: transform;
   width: 100vw;
@@ -64,20 +46,9 @@
   border-radius: 0.75em;
   overflow: hidden;
 }
-.card {
-  position: relative;
-}
-/* Solapamiento progresivo y centrado */
-/* .cards .card {
-  margin-inline: auto;
-} */
-/* .cards .card + .card {
-  margin-top: 0; ajusta el solapado entre cards
-} */
 
 .card-all {
-  background-color: #22222200;
-  /* Tab a la izquierda (estilo carpeta) */
+  background-color: #00000000;
   position: relative;
   display: flex;
   justify-content: center;  
@@ -87,7 +58,6 @@
 #card-1 {
   background-color: #ffffff;
   color: var(--dark);
-  /* Tab a la izquierda (estilo carpeta) */
   position: relative;
   display: flex;
   justify-content: center;  
@@ -100,7 +70,6 @@
 
 #card-2 {
   background-color: #858585;
-  /* Tab a la izquierda (estilo carpeta) */
   position: relative;
   display: flex;
   justify-content: center;  
@@ -112,7 +81,6 @@
 
 #card-3 {
   background-color: #363636;
-  /* Tab a la izquierda (estilo carpeta) */
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -123,18 +91,12 @@
 
 }
 
-#card-4 .card-inner {
-  background-color: #1e1e1e;
-  color: #fff;
-}
 
-/* ====== Card skeleton ====== */
 .card-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   align-items: start;
-  margin-top: 3rem;
 }
 
 .card-title-block {
@@ -218,7 +180,6 @@
   max-height: fit-content;
   object-fit: contain;
 }
-/* Ajustar contraste en cards oscuros */
 #card-2 .logo-wrapper, #card-3 .logo-wrapper { background: rgba(255,255,255,0.12); }
 #card-2 .logo-wrapper:hover, #card-3 .logo-wrapper:hover { background: rgba(255,255,255,0.2); }
 
@@ -287,7 +248,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  top: 0; /* subir la línea hacia arriba */
+  top: 0; 
   height: 1px; 
   border-bottom: 1px dashed rgba(0,0,0,0.4);
   margin-top: 1rem
@@ -336,7 +297,7 @@
 .thumb img,
 .thumb video { width: 100%; height: 100%; object-fit: cover; }
 
-/* contraste para temas oscuros */
+ 
 #card-2 .tag, #card-3 .tag { background: rgba(255,255,255,0.12); }
 #card-3 .card-divider { border-bottom-color: rgba(255,255,255,0.45); }
 #card-3 .card-cta { border-bottom-color: rgba(255,255,255,0.85); }
@@ -358,10 +319,6 @@
     display: none;
   }
 
-  /* Menor solapamiento en móvil */
-  /* .cards .card + .card {
-    margin-top: -24vh;
-  } */
   .card-header {
     align-items: start;
     margin-top: 3rem;
@@ -394,8 +351,6 @@
     grid-row: 5;
   }
 
-  /* En móvil, subir un poco menos para evit
-ar solapamientos excesivos */
 }
 
 @media (max-width: 800px) {
@@ -429,7 +384,7 @@ ar solapamientos excesivos */
     display: none;
   }
 
-  /* Reordenar en una sola columna: title → meta → summary → media */
+ 
   .card-inner {
     display: grid;
     grid-template-columns: 1fr;
@@ -441,7 +396,7 @@ ar solapamientos excesivos */
       "media";
     gap: clamp(12px, 2vw, 16px);
   }
-  /* Aplanar wrappers para que sus hijos sean items del grid */
+ 
   .card-header,
   .card-body { display: contents; }
 
@@ -451,7 +406,7 @@ ar solapamientos excesivos */
   .card-summary { grid-area: summary; }
   .card-media { grid-area: media; }
   .card-divider { display: none; }
-  /* Media grid en una columna para pantallas estrechas */
+ 
   .card-media { grid-template-columns: 1fr; }
 }
 

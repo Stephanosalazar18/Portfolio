@@ -132,7 +132,7 @@ const Outro = () => {
   );
 
   return (
-    <div className="outro-container-wrapper" id="outro">
+    <div className="outro-container-wrapper card" id="outro">
       <div className="new-footer">
         <footer>
           <div >

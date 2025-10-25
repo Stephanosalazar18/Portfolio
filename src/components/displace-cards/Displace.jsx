@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -32,62 +33,60 @@ const MediaElement = ({ src, alt }) => {
 const Card = ({ title, view, copy, year, category, logo, tags, images, index, link, link_2 }) => {
   return (
     <div className="card" id={`card-${index + 1}`}>
-      <div className="card-inner">
-        <div className="card-title-featured">
-          <span>FEATURED 0{index + 1}</span>
-          <button><a target="_blank" href={link_2}><span>{view}</span></a></button>
-        </div>
-        <header className="card-header">
-          <div className="card-title-block">
-            <a className="card-title" target="_blank" href={link}>
-              <h1 >{title}</h1>
-            </a>
-          </div>
-          <div className="card-summary">
-            <p>{copy}</p>
-          </div>
-          <aside className="card-meta">
-            <div className="card-year">{year}</div>
-            <div className="card-category">{category}</div>
-            <div className="card-tags">
-              {tags?.map((t, i) => (
-                <span className="tag" key={i}>{t}</span>
-              ))}
-            </div>
-            <div className="card-logos" aria-label="Tecnologías / Logos">
-              {logo?.map((src, i) => {
-                const fullSrc = src.startsWith('/') ? src : `/assets/logos/${src}`;
-                const alt = src.replace(/\/(.*\/)?/, '').replace(/[-_]/g, ' ').replace(/\..+$/, '');
-                return (
-                  <span className="logo-wrapper" key={i} title={alt}>
-                    <img className="logo-img" src={fullSrc} alt={alt} loading="lazy" />
-                  </span>
-                );
-              })}
-            </div>
-          </aside>
-        </header>
-
-        <div className="card-divider" />
-
-        <section className="card-body">
-          <div className="card-media">
-            <div className="media-main">
-              <MediaElement src={images?.main} alt={`${title} main`} />
-            </div>
-            <div className="media-side">
-              {images?.thumbs?.slice(0, 2).map((src, i) => (
-                <div className="thumb" key={i}>
-                  <MediaElement src={src} alt={`${title} thumb ${i + 1}`} />
-                </div>
-              ))}
-            </div>
-            <div className="media-main">
-              <MediaElement src={images?.main2} alt={`${title} main`} />
-            </div>
-          </div>
-        </section>
+      <div className="card-title-featured">
+        <span>FEATURED 0{index + 1}</span>
+        <button><a target="_blank" href={link_2}><span>{view}</span></a></button>
       </div>
+      <header className="card-header">
+        <div className="card-title-block">
+          <a className="card-title" target="_blank" href={link}>
+            <h1 >{title}</h1>
+          </a>
+        </div>
+        <div className="card-summary">
+          <p>{copy}</p>
+        </div>
+        <aside className="card-meta">
+          <div className="card-year">{year}</div>
+          <div className="card-category">{category}</div>
+          <div className="card-tags">
+            {tags?.map((t, i) => (
+              <span className="tag" key={i}>{t}</span>
+            ))}
+          </div>
+          <div className="card-logos" aria-label="Tecnologías / Logos">
+            {logo?.map((src, i) => {
+              const fullSrc = src.startsWith('/') ? src : `/assets/logos/${src}`;
+              const alt = src.replace(/\/(.*\/)?/, '').replace(/[-_]/g, ' ').replace(/\..+$/, '');
+              return (
+                <span className="logo-wrapper" key={i} title={alt}>
+                  <img className="logo-img" src={fullSrc} alt={alt} loading="lazy" />
+                </span>
+              );
+            })}
+          </div>
+        </aside>
+      </header>
+
+      <div className="card-divider" />
+
+      <section className="card-body">
+        <div className="card-media">
+          <div className="media-main">
+            <MediaElement src={images?.main} alt={`${title} main`} />
+          </div>
+          <div className="media-side">
+            {images?.thumbs?.slice(0, 2).map((src, i) => (
+              <div className="thumb" key={i}>
+                <MediaElement src={src} alt={`${title} thumb ${i + 1}`} />
+              </div>
+            ))}
+          </div>
+          <div className="media-main">
+            <MediaElement src={images?.main2} alt={`${title} main`} />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
@@ -129,7 +128,7 @@ const cards = [
       "Server Actions"
     ],
     logo: [
-      "/assets/logos/html5.svg", 
+      "/assets/logos/html5.svg",
       "/assets/logos/css.svg",
       "/assets/logos/typescript.svg",
       "/assets/logos/react.svg",
@@ -228,7 +227,7 @@ const cards = [
 ];
 
 export default function DisplaceCard() {
-  const container = useRef();
+  const container = useRef(null);
   const lenisRef = useRef();
 
   useEffect(() => {
@@ -240,55 +239,46 @@ export default function DisplaceCard() {
   }, []);
 
   useGSAP(() => {
-    const cardEls = gsap.utils.toArray(".cards .card");
-    if (!cardEls.length) return;
-    ScrollTrigger.create({
-      trigger: cardEls[0],
-      start: "top top",
-      endTrigger: cardEls[cardEls.length - 1],
-      end: () => cardEls[cardEls.length - 1].getBoundingClientRect().height,
-      pin: '.card-all',
-      pinSpacing: false,
-    });
-    cardEls.forEach((cardEl, index) => {
-      const cardInner = cardEl.querySelector(".card-inner");
-      ScrollTrigger.create({
-        trigger: cardEl,
-        start: "top 5%",
-        endTrigger: '.outro',
-        end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-      });
-      gsap.to(cardInner, {
-        ease: "none",
-        scrollTrigger: {
-          trigger: cardEl,
-          start: "top 85%",
-          endTrigger: '.outro',
-          end: "top 15%",
-          scrub: true,
-        },
-      });
-    });
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+
+    const stickyCards = gsap.utils.toArray(".cards .card");
+    const cardContainers = gsap.utils.selector(".displace-container");
+
+    stickyCards.forEach((card, index) => {
+      if (index < stickyCards.length - 1) {
+
+        gsap.to(cardContainers, {
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 5%",
+            endTrigger: '.outro',
+            end: "top bottom",
+            pin: true,
+            pinSpacing: false,
+            scrub: 3,
+          }
+        })
+      }
+      // return () => {
+      //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      // };
+    })
+
+
   }, { scope: container });
 
   // Solo Lenis sobre el contenido desplazable
   return (
     <>
-      <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
+      {/* <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} /> */}
       <div className="displace-container" ref={container} id="Projects">
-        <div className="card-all"></div>
         <section className="cards">
           {cards.map((card, index) => (
             <Card key={index} {...card} index={index} />
           ))}
+          <Outro />
         </section>
         <section className="outro">
-          <Outro />
         </section>
       </div>
     </>

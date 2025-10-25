@@ -56,10 +56,9 @@ export const PresentationCard = () => {
     { duration: 560, interval: 8550, startDelay: 900 }
   );
 
-  // Registrar plugin una única vez por módulo
   gsap.registerPlugin(ScrollTrigger);
 
-  // Parallax: cuando el top de la sección toca el bottom del viewport,
+  // Parallax -- cuando el top de la sección toca el bottom del viewport,
   // movemos la card-frame hasta el centro mientras se colapsa el navbar (~360px)
   useGSAP(() => {
     const frame = cardFrameRef.current;
@@ -75,15 +74,13 @@ export const PresentationCard = () => {
       ease: "none",
       scrollTrigger: {
         trigger: card,
-        start: "top bottom", // cuando el top de la sección toca el bottom del viewport
-        end: "+=360",        // misma distancia que el colapso del navbar
+        start: "top bottom", 
+        end: "+=400",       
         scrub: 1,
         invalidateOnRefresh: true,
         // markers: true,
       },
     })
-
-    gsap.set(card, { height: "80vh" })
 
     return () => {
       tween?.scrollTrigger?.kill();
