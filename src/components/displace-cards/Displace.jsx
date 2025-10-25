@@ -251,10 +251,11 @@ export default function DisplaceCard() {
           scrollTrigger: {
             trigger: card,
             start: "top 5%",
-            endTrigger: '.outro',
-            end: "top bottom",
+            endTrigger: stickyCards[stickyCards.length - 1],
+            end: "top 10%",
             pin: true,
             pinSpacing: false,
+            markers: true,
           }
         })
       }
