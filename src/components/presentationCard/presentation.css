@@ -230,24 +230,18 @@ padding: 13px;
   border: 10px solid #84ff00;
 }
 
-/* ========================= */
-/* Responsive: <= 980px      */
-/* ========================= */
+
 @media (max-width: 980px) {
-  /* El contenedor permite crecer en altura; evita centrar verticalmente cuando hay overflow */
   .card-presentation {
     height: auto;
-    min-height: 100vh;
-    justify-items: center; /* conserva centrado horizontal */
+    justify-items: center; 
     padding: 12px;
   }
 
   .card-frame {
     width: clamp(560px, 94vw, 920px);
-    /* Permite que la tarjeta crezca según el contenido (texto) */
     height: auto;
     min-height: clamp(360px, 50vw, 520px);
-    /* usar 2 columnas: frame-2 y frame-3 ocupan todo el ancho */
     grid-template-columns: 1fr 2fr;
   }
 
@@ -256,26 +250,26 @@ padding: 13px;
     display: none;
   }
 
-  /* reubicar frames para el nuevo grid de 2 columnas */
   .frame-2 { grid-column: 1; }
   .frame-3 { grid-column: 2; }
 
 
 }
 
-/* ========================= */
-/* Responsive móvil: <= 700px*/
-/* ========================= */
-
+@media (max-width: 800px) {
+  .card-presentation {
+    max-height: 40vh;
+  }
+}
 
 @media (max-width: 700px) {
-  /* En móvil también dejamos crecer y alineamos arriba */
   .card-presentation {
     height: auto;
-    min-height: 100vh;
     justify-items: center;
     padding: 16px;
     padding-right: 32px;
+    max-height: 45vh;
+
     
   }
 
@@ -347,7 +341,6 @@ padding: 13px;
     line-height: 1.7;
   }
 
-  /* Meta inferior se apila y ocupa alto dinámico en móvil */
   .bottom-frame-3 {
     flex-direction: rows;
     align-items: flex-start;
@@ -359,7 +352,7 @@ padding: 13px;
 
 @media (max-width: 450px) {
   .card-presentation {
-    max-height: 10vh;
+    max-height: 50vh;
     justify-items: center;
     padding: 16px;
     transform: translateY(10vh);

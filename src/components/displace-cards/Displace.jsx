@@ -255,6 +255,7 @@ export default function DisplaceCard() {
             end: "top 10%",
             pin: true,
             pinSpacing: false,
+      
           }
         })
       }
